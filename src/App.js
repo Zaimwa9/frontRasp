@@ -45,7 +45,6 @@ class App extends Component {
       method: 'get'
     })
     .then(result => {
-      console.log(result)
       this.setState({
         website: result.data.website
       })
@@ -54,12 +53,25 @@ class App extends Component {
 
   render() {
     const products = this.state.website ? this.state.website.products : {};
+    var sensors = this.state.website ? this.state.website.sockets : {};
+
+    sensors = _.filter(sensors, sensor => sensor.active === true);
+    console.log(sensors)
+    const sensorCards =
+      _.map(sensors, sensor => {
+        return (
+          <DataDisplay
+            key={Math.floor(Math.random() * 1000)}
+            sensor={sensor.name}
+          />
+        )
+      });
 
     const productCards =
       _.map(products, product => {
         return (
           <Product
-            key={Math.floor(Math.random() * 100)}
+            key={Math.floor(Math.random() * 1000)}
             name={product.name}
             price={product.price}
             stock={product.stock}
@@ -70,7 +82,7 @@ class App extends Component {
     return (
       <div className="App">
         <MyHeader title={this.state.website ? this.state.website.title : ''}/>
-        <DataDisplay sensor='temperature' />
+        {sensorCards}
         {productCards}
       </div>
     );

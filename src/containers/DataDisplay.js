@@ -24,6 +24,7 @@ class DataDisplay extends Component {
   }
 
   render () {
+    console.log(this.props.sensor)
     return (
       <Item>
         <Item.Header as='h2' content='Mon component' />
