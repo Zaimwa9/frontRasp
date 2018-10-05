@@ -6,7 +6,10 @@ class MyHeader extends Component {
 
   render () {
     return (
-      <Header as='h1' content={this.props.title} />
+      <Header as='h1'
+        style={{backgroundColor: this.props.color}}
+        content={this.props.title}
+      />
     )
   }
 }

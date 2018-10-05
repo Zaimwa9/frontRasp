@@ -52,6 +52,7 @@ class App extends Component {
   }
 
   render() {
+    const header = this.state.website ? this.state.website.header : {};
     const products = this.state.website ? this.state.website.products : {};
     var sensors = this.state.website ? this.state.website.sockets : {};
 
@@ -81,7 +82,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <MyHeader title={this.state.website ? this.state.website.title : ''}/>
+        <MyHeader
+          title={this.state.website ? header.title : ''}
+          color={this.state.website ? header.color : ''}
+        />
         {sensorCards}
         {productCards}
       </div>
