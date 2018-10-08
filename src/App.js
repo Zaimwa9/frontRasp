@@ -9,6 +9,8 @@ import MyHeader from './components/Header';
 import DataDisplay from './containers/DataDisplay';
 import Product from './containers/Product';
 
+import { Grid } from 'semantic-ui-react';
+
 import 'semantic-ui-css/semantic.min.css';
 
 class App extends Component {
@@ -41,7 +43,7 @@ class App extends Component {
 
   componentWillMount() {
     axios({
-      url: 'http://raspberrypi:3000/',
+      url: 'http://raspberrypi.local:3000/',
       method: 'get'
     })
     .then(result => {
@@ -61,22 +63,26 @@ class App extends Component {
     const sensorCards =
       _.map(sensors, sensor => {
         return (
-          <DataDisplay
-            key={Math.floor(Math.random() * 1000)}
-            sensor={sensor.name}
-          />
+          <Grid.Column>
+            <DataDisplay
+              key={Math.floor(Math.random() * 1000)}
+              sensor={sensor.name}
+            />
+          </Grid.Column>
         )
       });
 
     const productCards =
       _.map(products, product => {
         return (
-          <Product
-            key={Math.floor(Math.random() * 1000)}
-            name={product.name}
-            price={product.price}
-            stock={product.stock}
-          />
+          <Grid.Column>
+            <Product
+              key={Math.floor(Math.random() * 1000)}
+              name={product.name}
+              price={product.price}
+              stock={product.stock}
+            />
+          </Grid.Column>
         )
       })
 
@@ -86,8 +92,12 @@ class App extends Component {
           title={this.state.website ? header.title : ''}
           color={this.state.website ? header.color : ''}
         />
-        {sensorCards}
-        {productCards}
+        <Grid columns={3} style={{marginTop: '20px'}}>
+          {sensorCards}
+        </Grid>
+        <Grid columns={2}>
+          {productCards}
+        </Grid>
       </div>
     );
   }

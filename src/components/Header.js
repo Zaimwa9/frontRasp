@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Menu } from 'semantic-ui-react';
 
 class MyHeader extends Component {
 
   render () {
     return (
-      <Header as='h1'
-        style={{backgroundColor: this.props.color}}
-        content={this.props.title}
-      />
+      <Container fluid style={{height: '20%', backgroundColor: this.props.color}}>
+      <Menu pointing basic inverted color={this.props.color} size='massive'>
+          <Menu.Item header>
+            {this.props.title}
+          </Menu.Item>
+        </Menu>
+      </Container>
     )
   }
 }
