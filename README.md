@@ -1,8 +1,8 @@
  # frontRasp
 
-Basic React front (using [semantic](https://react.semantic-ui.com/) that is part of a music instrument marketplace prototype powered by a fully voice-controlled (Snips) back-office.
+Basic React front (using [semantic](https://react.semantic-ui.com/)) that is part of a music instrument marketplace prototype powered by a fully voice-controlled (Snips) back-office.
 
-This client communicates with [apiRasp](https://github.com/Zaimwa9) to get the website structure from a fake database data.json. Depending on the structure, it can display realtime temperature/pressure/humidity data and the list of available products.
+This client communicates with [apiRasp](https://github.com/Zaimwa9) to get the website structure from a fake database data.json. Depending on the structure, (for the fun) it can display realtime temperature/pressure/humidity data and the list of available products.
 The CRUD methods to control the database are done within a [Snips app](https://github.com/Zaimwa9/apiSnips).
 
 Check out [Snips](https://snips.ai/) for more info.
