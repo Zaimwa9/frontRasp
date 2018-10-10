@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import moment from 'moment';
 import openSocket from 'socket.io-client';
 
 import { Item, Segment } from 'semantic-ui-react';
@@ -25,9 +24,9 @@ class DataDisplay extends Component {
 
   render () {
     var type = '';
-    if (this.props.sensor == 'temperature') {
+    if (this.props.sensor === 'temperature') {
       type = '°'
-    } else if (this.props.sensor == 'pressure') {
+    } else if (this.props.sensor === 'pressure') {
       type = ' Pa'
     } else {
       type = ' g/m3'
