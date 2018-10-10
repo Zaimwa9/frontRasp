@@ -2,7 +2,7 @@
 
 Basic React front (using [semantic](https://react.semantic-ui.com/)) that is part of a music instrument marketplace prototype powered by a fully voice-controlled (Snips) back-office.
 
-This client communicates with [apiRasp](https://github.com/Zaimwa9) to get the website structure from a fake database data.json. Depending on the structure, (for the fun) it can display realtime temperature/pressure/humidity data and the list of available products.
+This client communicates with [apiSnips](https://github.com/Zaimwa9/apiSnips) to get the website structure from a fake database (json). Depending on the structure, (for the fun) it can display realtime temperature/pressure/humidity data and the list of available products.
 The CRUD methods to control the database are done within a [Snips app](https://github.com/Zaimwa9/apiSnips).
 
 Check out [Snips](https://snips.ai/) for more info.
@@ -11,7 +11,7 @@ Check out [Snips](https://snips.ai/) for more info.
 
 The apiRasp must be running on a Raspberry accessible via local network.
 
-You need to have a Snips account and an assistant with the Snips app linked to fully use the features.
+You need to have a Snips account and an assistant with the apiSnips app linked to fully use the features.
 
 # Getting Started
 
@@ -22,7 +22,7 @@ Clone the repository either on your personal device or on the raspberry, both sh
 `sudo yarn install`
 `yarn start`
 
-If modified in apiRasp, select the right port in /src/app.js:
+The port is 3000 by default on the apiSnips, if you modified it don't forget to select the right port in /src/app.js:
 
 ```javascript
 
